@@ -20,7 +20,7 @@ server <- function(input, output, session){
     }
     
     #calls the blast
-    system(paste0("./blat ./data/lytechinus_pictus_30Nov2018_OWxax.fasta ",tmp," -out=blast8 ",tmp,".txt"), intern = T)
+    system(paste0("./blat ./data/lytechinus_pictus.2bit ",tmp," -out=blast8 ",tmp,".txt"), intern = T)
     blat_table <- read.table(file = paste0(tmp,'.txt'),sep = '\t', quote="", skip=5)
     colnames(blat_table) = c("Query","Target","%ID","alignment length","mismatches","gap openings","query start","query end","subject start","subject end","e-value","bit score")
     return(blat_table)
