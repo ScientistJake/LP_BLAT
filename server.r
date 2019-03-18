@@ -52,7 +52,7 @@ server <- function(input, output, session){
     }
     
     #calls the blast
-    system(paste0("./blat ./data/lytechinus_pictus_30Nov2018_OWxax.fasta ",tmp," -out=psl ",tmp,".psl"), intern = T)
+    system(paste0("./blat ./data/lytechinus_pictus.2bit ",tmp," -out=psl ",tmp,".psl"), intern = T)
 
     ## Here we're returning just the file path  
     return(paste0(tmp,".psl"))
