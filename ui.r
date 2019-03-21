@@ -36,15 +36,11 @@ ui <- navbarPage(
       downloadButton("downloadTxt", "Download txt"),                 
       br(),
       br(),
-      p("Click 'Export psl' to generate a psl file:"),
-      p("Only click Export once, the download button will appear when its ready."),
-      actionButton('export', 'Export psl'),
+      p("Download psl here:"),
       br(),
-      textOutput("dataReady"),
-      conditionalPanel(
-        condition = "output.dataReady == 'Download data below:'",
-        downloadButton("downloadPsl", "Download psl")
-      )
+
+      downloadButton("downloadPsl", "Download psl")
+      
     )
   ),
   tabPanel("About",value = "about",
